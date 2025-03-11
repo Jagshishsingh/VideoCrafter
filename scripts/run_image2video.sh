@@ -37,5 +37,6 @@ python3 scripts/evaluation/inference.py \
 --ddim_eta 1.0 \
 --prompt_file $prompt_file \
 --cond_input $condimage_dir \
---fps 8
+--fps 30 \
+--frames 120
 
