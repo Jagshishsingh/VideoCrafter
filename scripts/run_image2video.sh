@@ -33,8 +33,8 @@ python3 scripts/evaluation/inference.py \
 --savedir $res_dir/$name \
 --n_samples 1 \
 --bs 1 --height 512 --width 512 \
---unconditional_guidance_scale 15.0 \
---ddim_steps 50 \
+--unconditional_guidance_scale 7.5 \
+--ddim_steps 80 \
 --ddim_eta 0.0 \
 --prompt_file $prompt_file \
 --cond_input $condimage_dir \
