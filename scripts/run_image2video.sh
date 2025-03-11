@@ -24,7 +24,7 @@ fi
 
 res_dir="results"
 
-# Use high resolution settings for better quality
+# Use more moderate resolution settings for Colab GPU
 python3 scripts/evaluation/inference.py \
 --seed 123 \
 --mode 'i2v' \
@@ -39,5 +39,5 @@ python3 scripts/evaluation/inference.py \
 --prompt_file $prompt_file \
 --cond_input $condimage_dir \
 --fps 30 \
---frames 120
+--frames 60
 
