@@ -24,6 +24,7 @@ fi
 
 res_dir="results"
 
+# Use high resolution settings for better quality
 python3 scripts/evaluation/inference.py \
 --seed 123 \
 --mode 'i2v' \
@@ -31,7 +32,7 @@ python3 scripts/evaluation/inference.py \
 --config $config \
 --savedir $res_dir/$name \
 --n_samples 1 \
---bs 1 --height 320 --width 512 \
+--bs 1 --height 1536 --width 1536 \
 --unconditional_guidance_scale 12.0 \
 --ddim_steps 50 \
 --ddim_eta 1.0 \
