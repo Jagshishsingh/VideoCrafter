@@ -3,8 +3,25 @@ name="i2v_512_test"
 ckpt='checkpoints/i2v_512_v1/model.ckpt'
 config='configs/inference_i2v_512_v1.0.yaml'
 
-prompt_file="prompts/i2v_prompts/test_prompts.txt"
-condimage_dir="prompts/i2v_prompts"
+# Get input parameters with defaults
+if [ -z "$1" ]; then
+  echo "No image path provided, using default directory"
+  condimage_dir="prompts/i2v_prompts"
+else
+  condimage_dir="$1"
+  echo "Using image from: $condimage_dir"
+fi
+
+if [ -z "$2" ]; then
+  echo "No prompt provided, using default prompt file"
+  prompt_file="prompts/i2v_prompts/test_prompts.txt"
+else
+  # Create a temporary prompt file with the provided prompt
+  prompt_file="prompts/i2v_prompts/temp_prompt.txt"
+  echo "$2" > $prompt_file
+  echo "Using custom prompt: $2"
+fi
+
 res_dir="results"
 
 python3 scripts/evaluation/inference.py \
