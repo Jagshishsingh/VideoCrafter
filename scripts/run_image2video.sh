@@ -32,12 +32,12 @@ python3 scripts/evaluation/inference.py \
 --config $config \
 --savedir $res_dir/$name \
 --n_samples 1 \
---bs 1 --height 768 --width 768 \
+--bs 1 --height 512 --width 512 \
 --unconditional_guidance_scale 12.0 \
 --ddim_steps 50 \
 --ddim_eta 1.0 \
 --prompt_file $prompt_file \
 --cond_input $condimage_dir \
---fps 30 \
---frames 60
+--fps 8 \
+--frames 24
 
