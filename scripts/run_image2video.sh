@@ -32,7 +32,7 @@ python3 scripts/evaluation/inference.py \
 --config $config \
 --savedir $res_dir/$name \
 --n_samples 1 \
---bs 1 --height 1536 --width 1536 \
+--bs 1 --height 768 --width 768 \
 --unconditional_guidance_scale 12.0 \
 --ddim_steps 50 \
 --ddim_eta 1.0 \
